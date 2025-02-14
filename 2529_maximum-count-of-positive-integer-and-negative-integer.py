@@ -33,7 +33,3 @@ class Solution:
         neg_count = bisect_left(nums, 0) 
         pos_count = len(nums) - bisect_left(nums, 1)
         return max(neg_count, pos_count)
-
-
-sol = Solution()
-print(sol.maximumCount([5,20,66,1314]))
