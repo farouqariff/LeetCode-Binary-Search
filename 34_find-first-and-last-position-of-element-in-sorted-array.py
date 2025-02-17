@@ -10,11 +10,11 @@ class Solution:
         first_pos = -1
         while lo <= hi:
             mid = lo + (hi - lo) // 2
-            if target > nums[mid]:  # Move right
+            if target > nums[mid]:
                 lo = mid + 1
-            else:  # target <= nums[mid], move left
+            else:
                 hi = mid - 1
-            if target == nums[mid]:  # Store the possible first position
+            if target == nums[mid]:
                 first_pos = mid  
         return first_pos
     
@@ -23,11 +23,11 @@ class Solution:
         last_pos = -1
         while lo <= hi:
             mid = lo + (hi - lo) // 2
-            if target < nums[mid]:  # Move left
+            if target < nums[mid]:
                 hi = mid - 1
-            else:  # target >= nums[mid], move right
+            else:
                 lo = mid + 1
-            if target == nums[mid]:  # Store the possible last position
+            if target == nums[mid]:
                 last_pos = mid  
         return last_pos
 

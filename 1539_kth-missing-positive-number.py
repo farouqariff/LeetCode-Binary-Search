@@ -6,12 +6,11 @@ class Solution:
 
         while lo <= hi:
             mid = lo + (hi - lo) // 2
-            missing = arr[mid] - (mid + 1)  # Correct way to count missing numbers
+            missing = arr[mid] - (mid + 1)
 
             if missing < k:
-                lo = mid + 1  # Search right
+                lo = mid + 1
             else:
-                hi = mid - 1  # Search left
+                hi = mid - 1
 
-        # After binary search, the kth missing number is: 
-        return lo + k  # `lo` is the number of non-missing elements
+        return lo + k

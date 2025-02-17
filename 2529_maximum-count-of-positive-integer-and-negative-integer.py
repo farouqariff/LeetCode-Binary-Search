@@ -3,7 +3,6 @@ from bisect import bisect_left, bisect_right
 
 class Solution:
     def maximumCount(self, nums: List[int]) -> int:
-        # Find the first index where nums[index] >= 0
         left, right = 0, len(nums)
         while left < right:
             mid = left + (right - left) // 2
@@ -12,10 +11,8 @@ class Solution:
             else:
                 right = mid
         
-        # The number of negative numbers is 'left'
         neg_count = left
         
-        # Find the first index where nums[index] > 0
         left, right = 0, len(nums)
         while left < right:
             mid = left + (right - left) // 2
@@ -24,7 +21,6 @@ class Solution:
             else:
                 right = mid
         
-        # The number of positive numbers is 'len(nums) - left'
         pos_count = len(nums) - left
         
         return max(neg_count, pos_count)
